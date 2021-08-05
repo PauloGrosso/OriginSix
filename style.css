@@ -26,10 +26,14 @@ ul {
   /*== COLORS ====*/
   --body-color: hsl( 0, 0%, 98%);
   --base-color: hsl(var(--hue), 36%, 57%);
-  --base-color-second: hsl(var(--hue), 65%, 88%);
+  --base-color-second: hsl(var(--hue), 72%, 34%);
   --text-color: hsl(0, 0%, 46%);
-  --text-color-light: ;
-  --title-color: hsl(var(--hue), 41%, 10%);
+  --text-color-light: hsla(0, 0%, 87%, 1);
+  --title-color: hsl(var(--hue), 41%, 1%);
+
+  /* ==== FONTS ==== */
+  --poppins-font: 'Poppins', sans-serif;
+  --dm-sans-font: 'DM Sans', sans-serif;
 }
 
 /*===============================================*/
@@ -41,14 +45,19 @@ html {
 }
 
 body {
-  font: 400 1rem 'DM Sans', sans-serif;
+  font: 400 1rem var(--dm-sans-font);
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
 
 .logo {
+  font: 700 1.3rem var(--poppins-font);
   color: var(--title-color);
+}
+
+.logo-alt span {
+  color: var(--body-color);
 }
 
 span {
@@ -56,7 +65,7 @@ span {
 }
 
 .title {
-  font: 700 1.9rem 'Poppins', sans-serif;
+  font: 700 2rem var(--poppins-font);
   color: var(--title-color);
   -webkit-font-smoothing: auto;
 }
@@ -426,4 +435,96 @@ header .p {
 .swiper-pagination-bullet-active {
   background: var(--base-color);
 }
+
+/* ======== CONTACT ========= */
+#contact .grid {
+  gap: 4rem;
+}
+
+#contact .text p {
+  margin-bottom: 2rem;
+}
+
+#contact .button i,
+#contact ul li i {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+#contact ul.grid {
+  gap: 2rem;
+}
+
+#contact ul li  {
+  display: flex;
+  text-align: center;;
+}
+
+#contact ul li i {
+  color: var(--base-color);
+}
+
+
+
+
+/* ======== FOOTER ========= */
+footer {
+  background: var(--base-color);
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+  color: var(--body-color);
+}
+
+footer .social {
+  display: flex;
+  gap: 2rem;
+}
+
+footer .social a:hover {
+  transform: translateY(-10px);
+}
+
+
+/* ======== BUTTON ARROW UP ========= */
+.back-top {
+  background: var(--base-color);
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  clip-path: circle();
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: .3s;
+  transform: translateY(100%);
+}
+
+.back-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======== MEDIA QUERIES ========= */
+/* == 1200 == */
+@media(min-width: 992px) {
+  
+}
+
 
